@@ -25,21 +25,21 @@ def inferir_recomendacao(fatos):
         # aqui é pa verifica se todas as condições da regra correspondem aos fatos
         if all(fatos.get(chave) == valor for chave, valor in regra["condicoes"].items()):
             return regra["acao"]
-    return "Desculpe, não encontrei uma recomendação baseada nas suas preferências. Tente outras opções!"
+    return "Desculpe, nao encontrei uma recomendacao baseada nas suas preferencias. Tente outras opcoes!"
 
 # Interface com o usuario por input memo
 def coletar_fatos():
     fatos = {}
     print("Bem-vindo ao Sistema Especialista de Planejamento de Refeições!")
-    fatos["dieta"] = input("Você é vegetariano? (sim/não): ").strip().lower()
+    fatos["dieta"] = input("Você é vegetariano? (sim/nao): ").strip().lower()
     if fatos["dieta"] == "sim":
         fatos["dieta"] = "vegetariana"
     else:
         fatos["dieta"] = "não vegetariana"
     
-    fatos["horario"] = input("Qual refeição? (café da manhã/almoço/jantar): ").strip().lower()
+    fatos["horario"] = input("Qual refeicao? (cafe da manha/almoço/jantar): ").strip().lower()
     
-    fatos["humor"] = input("Seu humor para a refeição? (saudável/comfort): ").strip().lower()
+    fatos["humor"] = input("Seu humor para a refeicao? (saudavel/comfort): ").strip().lower()
     
     return fatos
 
