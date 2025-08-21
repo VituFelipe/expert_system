@@ -45,7 +45,8 @@ def inferir_recomendacao(fatos, regras):
     humor = fatos["humor"]
     fome = fatos["fome"]
     recomendacao = regras[horario][dieta][humor][fome]
-    return [(recomendacao, f"Recomendacao baseada em: horario={horario}, dieta={dieta}, humor={humor}, fome={fome}")]
+    explicacao = "Recomendacao baseada em: horario={}, dieta={}, humor={}, fome={}".format(horario, dieta, humor, fome)
+    return [(recomendacao, explicacao)]
 
 def validar_entrada(opcoes, prompt):
     while True:
